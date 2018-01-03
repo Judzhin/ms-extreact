@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Transition, Container, TitleBar, Button, Sheet, Panel } from '@extjs/ext-react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
-import { medium, large } from './responsiveFormulas';
+import React, {Component} from 'react'
+import {Transition, Container, TitleBar, Button, Sheet, Panel} from '@extjs/ext-react';
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
+import {medium, large} from './responsiveFormulas';
 import Home from './Home/Home';
 import About from './About/About';
 import NavMenu from './NavMenu';
@@ -16,21 +16,21 @@ class Layout extends Component {
     }
 
     toggleAppMenu = () => {
-        this.setState({ showAppMenu: !this.state.showAppMenu });
+        this.setState({showAppMenu: !this.state.showAppMenu});
     }
 
     onHideAppMenu = () => {
-        this.setState({ showAppMenu: false });
+        this.setState({showAppMenu: false});
     }
 
     navigate = (path) => {
-        this.setState({ showAppMenu: false });
+        this.setState({showAppMenu: false});
         this.props.history.push(path);
     }
 
     render() {
-        const { showAppMenu } = this.state;
-        const { location } = this.props;
+        const {showAppMenu} = this.state;
+        const {location} = this.props;
 
         const navMenuDefaults = {
             onItemClick: this.navigate,
