@@ -4,18 +4,20 @@ import {AppContainer} from 'react-hot-loader'
 import {launch, Container, Button} from '@extjs/reactor';
 import App from './App'
 
-let viewport;
+// let viewport;
 
-const render = (Component, target) => {
-    ReactDOM.render(
-        <AppContainer>
-            <Component/>
-        </AppContainer>, target
-    )
-};
+// const render = (Component, target) => {
+//     ReactDOM.render(
+//         <AppContainer>
+//             <Component/>
+//         </AppContainer>, target
+//     )
+// };
 
-launch(target => render(App, viewport = target));
+// launch(target => render(App, viewport = target));
 //
 // if (module.hot) {
 //     module.hot.accept('./App', () => render(App, viewport));
 // }
+
+launch(<App />);
