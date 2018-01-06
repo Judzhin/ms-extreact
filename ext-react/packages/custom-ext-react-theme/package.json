@@ -36,8 +36,9 @@
          * Themes can also use extend to inherit Sass and resources from another theme package.
          *
          *    "extend": "parent-theme-package",
+         *    "extend": "theme-material",
          */
-        "extend": "theme-material",
+        "extend": "theme-neptune",
 
         /**
          * The toolkit used by this theme (only for "theme" package type).

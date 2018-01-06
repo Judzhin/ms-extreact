@@ -3,28 +3,44 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 import React, {Component} from 'react'
-import {TitleBar, Button} from '@extjs/ext-react';
+import {Panel, SearchField, TreeList} from '@extjs/ext-react';
+
+const navigation = {
+    id: '/',
+    text: 'All',
+    children: [{
+        text: 'SegmentedButton',
+        // component: SegmentedButton,
+        layout: 'center',
+        navIcon: 'icon-segmented-buttons'
+    }]
+};
 
 /**
  *
  */
-class Header extends Component {
+class Sidebar extends Component {
 
     render() {
         return (
-            <TitleBar docked="top" shadow style={{zIndex: 2}}>
-                <Button
-                    align="left"
-                    iconCls="x-fa fa-bars"
-                    // handler={actions.toggleTree}
+            <Panel
+                scrollable="y"
+                shadow
+                style={{zIndex: 100, backgroundColor: 'white'}}
+                header={false}
+                collapsible={{ direction: 'left' }}
+            >
+                <SearchField flex={1} docked="top" ui="faded" margin="7" />
+                <TreeList
+                    ui="nav"
+                    expanderFirst={false}
+                    expanderOnly={false}
+                    // onSelectionChange={onSelectionChange}
+                    // selection={selection}
                 />
-                {/*<div className="ext ext-sencha" style={{margin: '0 5px 0 7px', fontSize: '20px', width: '20px'}} />*/}
-                {/*<a href="#" className="app-title">*/}
-                ЄРАУ - Єдиний Реєстр Адвокатів Україниbeta 2.0
-                {/*</a>*/}
-            </TitleBar>
+            </Panel>
         );
     }
 }
 
-export default Header;
+export default Sidebar;
